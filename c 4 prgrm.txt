@@ -1,0 +1,64 @@
+//6. Print the sum of nth term of 1+11+111+..... series.
+
+#include <stdio.h>
+
+int main()
+{
+  int n,i; 
+  long int sum=0,t=1;
+ 
+  printf("input the nth term : ");
+  scanf("%d",&n);
+  for(i=1;i<=n;i++)
+  {
+    
+     sum=sum+t;
+     t=(t*10)+1;
+  }
+  printf("Sum: %ld\n",sum);
+  return 0;
+}
+__________________________x_________________________
+
+//2. Print the transpose of a matrix of n*n order using function.
+
+#include<stdio.h>
+int n;
+void transpose(int p[n][n], int t[n][n]);
+    
+  int main()                                   
+  {
+  int  i, j; 
+  printf("enter the order \n");
+  scanf("%d",&n);
+  int   p[n][n], t[n][n];
+
+  printf("Enter matrix P\n");
+ 
+  for (i=0; i<n; i++)                     
+    for (j=0; j<n; j++) {
+      scanf("%d", &p[i][j]);
+    }
+
+  transpose(p, t);                                  
+
+  printf("Transpose of matrix P is:\n\n");
+
+  for (i=0; i<n; i++) {              
+    for (j=0; j<n; j++)
+      printf("%d ", t[i][j]);
+    printf("\n");
+  }
+
+  }
+
+   void transpose(int p[n][n], int t[n][n])
+  {
+    
+  int  i, j;        
+
+  for (i=0; i<n; i++)
+    for (j=0; j<n; j++)
+      t[i][j] = p[j][i];
+
+  }
