@@ -62,3 +62,54 @@ void transpose(int p[n][n], int t[n][n]);
       t[i][j] = p[j][i];
 
   }
+
+
+
+
+____________________x__________________________
+
+//3. exp. with out using math.h
+#include <stdio.h>
+
+int main() {
+   long int base,power,tem=1;
+    printf("enter the base and the power\n");
+    scanf("%ld%ld",&base,&power);
+    if(power==0){
+        printf("ans=%ld",base);
+    }
+    if(power>=1){
+        for(int i=1;i<=power;i++){
+             tem=tem*base;
+        }
+        printf("ans=%ld",tem);
+    }
+    
+    return 0;
+}
+
+-------------------------------------------x-----------------------------------
+
+
+
+// 4. sum of all dynamic array until un natural number
+#include <stdio.h>
+#include<stdlib.h>
+int main() {
+  int *ptr,i,n,sum=0;
+  ptr=(int*)malloc(sizeof(int));
+  while(1){
+      printf("enter the number \n");
+      scanf("%d",&n);
+      if(n>0){
+          ptr=realloc(ptr,sizeof(int));
+          *(ptr+0)=n;
+          sum=sum+ *(ptr+0);
+      }
+      if(n<=0){
+          break;
+      }
+  }
+    printf("sum=%d",sum);
+    return 0;
+}
